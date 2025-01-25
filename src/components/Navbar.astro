@@ -1,0 +1,117 @@
+---
+import CompanyLogo from "./CompanyLogo.astro";
+
+const { isHome, isProducts, isAbout, isContact } = Astro.props;
+---
+
+<nav class="shadow-md">
+  <div class="container mx-auto flex items-center justify-between h-16 px-6">
+    <CompanyLogo />
+
+    <!-- Links (Desktop View) -->
+    <ul class="hidden md:flex space-x-6 text-gray-800 font-medium">
+      <li>
+        <a
+          href="/"
+          class:list={["hover:text-red-600", { "text-red-500": isHome }]}
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          href="/products"
+          class:list={["hover:text-red-600", { "text-red-500": isProducts }]}
+        >
+          Products
+        </a>
+      </li>
+      <li>
+        <a
+          href="/about"
+          class:list={["hover:text-red-600", { "text-red-500": isAbout }]}
+        >
+          About
+        </a>
+      </li>
+      <li>
+        <a
+          href="/contact"
+          class:list={["hover:text-red-600", { "text-red-500": isContact }]}
+        >
+          Contact
+        </a>
+      </li>
+    </ul>
+
+    <!-- Mobile Menu -->
+    <button
+      id="hamburger-btn"
+      class="block md:hidden text-gray-800 focus:outline-none"
+      aria-label="Toggle menu"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="absolute top-16 left-0 w-full bg-gray-100 shadow-md hidden md:hidden"
+  >
+    <ul class="flex flex-col space-y-4 text-gray-800 font-medium p-4">
+      <li>
+        <a
+          href="/"
+          class:list={["block", "py-2", "px-4", { "text-red-500": isHome }]}
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="/products"
+          class:list={["block", "py-2", "px-4", { "text-red-500": isProducts }]}
+          >Products</a
+        >
+      </li>
+      <li>
+        <a
+          href="/about"
+          class:list={["block", "py-2", "px-4", { "text-red-500": isAbout }]}
+          >About</a
+        >
+      </li>
+      <li>
+        <a
+          href="/contact"
+          class:list={["block", "py-2", "px-4", { "text-red-500": isContact }]}
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <!-- Hamburger button toggle -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburgerBtn = document.getElementById("hamburger-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      hamburgerBtn?.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("hidden");
+      });
+    });
+  </script>
+</nav>
