@@ -7,98 +7,81 @@ import Layout from "../layouts/Layout.astro";
   <Navbar isContact={true} />
 
   <div class="container mx-auto p-8">
-    <!-- Page Title -->
-    <section>
-      <h1 class="text-4xl font-bold text-gray-800 mb-4 text-left">
-        Contact Us
-      </h1>
-      <p class="text-sm text-gray-600 mb-6 text-left">
-        Please fill out the form below or reach out to us at
-        <a
-          href="mailto:nibedita@gold-sterling.com"
-          class="underline text-red-500 hover:text-red-600"
-        >
-          nibedita@gold-sterling.com
-        </a>
-        .
-      </p>
+    <h1 class="text-4xl font-bold text-gray-800 mb-4 text-left">Contact Us</h1>
 
-      <!-- Form and Map Section -->
-      <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <!-- Contact Form -->
-        <div>
-          <form
-            action="https://formspree.io/f/{your_form_id}"
-            method="POST"
-            class="space-y-6"
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Contact Form -->
+      <div>
+        <p class="text-sm text-gray-600 mb-6 text-left">
+          Please fill out the form below or reach out to us at
+          <a
+            href="mailto:nibedita@gold-sterling.com"
+            class="underline text-red-500 hover:text-red-600"
           >
-            <div>
-              <label for="name" class="text-sm text-gray-700 block mb-2"
-                >Your Name</label
-              >
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                class="w-full p-3 border border-gray-300 rounded-lg"
-              />
-            </div>
+            nibedita@gold-sterling.com
+          </a>
+          .
+        </p>
 
-            <div>
-              <label for="email" class="text-sm text-gray-700 block mb-2"
-                >Your Email</label
-              >
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                class="w-full p-3 border border-gray-300 rounded-lg"
-              />
-            </div>
-
-            <div>
-              <label for="message" class="text-sm text-gray-700 block mb-2"
-                >Your Message</label
-              >
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows="6"
-                class="w-full p-3 border border-gray-300 rounded-lg"></textarea>
-            </div>
-
-            <button
-              type="submit"
-              class="bg-red-500 text-white py-3 px-6 rounded-lg hover:bg-red-600"
-              >Submit</button
+        <form
+          action="https://formspree.io/f/{your_form_id}"
+          method="POST"
+          class="space-y-6"
+        >
+          <div>
+            <label for="name" class="text-sm text-gray-700 block mb-2"
+              >Your Name</label
             >
-          </form>
-        </div>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg"
+            />
+          </div>
 
-        <!-- Embedded Map -->
-        <div>
-          <!-- <iframe
-            class="rounded-lg w-full h-full border-red-500 border-t-4"
-            allowfullscreen={true}
-            src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=G2VM+2VW,%20Unnamed%20Road,%20Sector%2028%20Dwarka,%20Dwarka,%20New%20Delhi,%20Delhi,%20110061+(Gold%20Sterling%20Technologies)&t=k&z=14&ie=UTF8&iwloc=B&output=embed"
-          ></iframe> -->
-          <iframe
-            allowfullscreen={true}
-            class="rounded-lg w-full h-full border-red-500 border-t-4"
-            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=28.542670,%2077.034740+(Gold%20Sterling%20Technologies)&amp;t=k&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-          ></iframe>
-          <!-- <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.84791710302878!2d77.0346305407186!3d28.542677971390592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1a41f5382cfd%3A0x1d1b3d750568f776!2sG2VM%2B2VW%2C%20Unnamed%20Road%2C%20Sector%2028%20Dwarka%2C%20Dwarka%2C%20New%20Delhi%2C%20Delhi%2C%20110061!5e0!3m2!1sen!2sin!4v1737821327684!5m2!1sen!2sin"
-            class="rounded-lg w-full h-full border-red-500 border-t-4"
-            loading="lazy"
-            allowfullscreen={true}
-          > 
-          </iframe> -->
-        </div>
-      </section>
+          <div>
+            <label for="email" class="text-sm text-gray-700 block mb-2"
+              >Your Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="text-sm text-gray-700 block mb-2"
+              >Your Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="6"
+              class="w-full p-3 border border-gray-300 rounded-lg"></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="bg-red-500 text-white py-3 px-6 rounded-lg hover:bg-red-600"
+            >Submit</button
+          >
+        </form>
+      </div>
+
+      <!-- Embedded Map -->
+      <div>
+        <iframe
+          allowfullscreen={true}
+          class="rounded-lg w-full h-full border-red-500 border-t-4"
+          src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=28.542670,%2077.034740+(Gold%20Sterling%20Technologies)&t=k&z=19&ie=UTF8&iwloc=B&output=embed"
+        ></iframe>
+      </div>
     </section>
   </div>
 </Layout>
