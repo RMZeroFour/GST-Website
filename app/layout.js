@@ -1,4 +1,5 @@
 import { Roboto_Flex } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 import { HeaderBar } from "./HeaderBar.js";
 import "./globals.css";
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         </header>
         <main>
           {children}
+          <Toaster position="bottom-center"/>
         </main>
       </body>
     </html>
