@@ -37,7 +37,7 @@ function HomeRoute() {
   return (
     <>
       {/* Main Carousel */}
-      <CustomCarousel interval={4000} duration={1000} count={1}>
+      <CustomCarousel interval={4000} duration={1000} counts={{ desktop: 1, tablet: 1, mobile: 1 }}>
         {carouselImages.map((src, index) => (
           <div key={index} className="w-full">
             <img
@@ -51,7 +51,7 @@ function HomeRoute() {
 
       <div className='my-16'>
         {/* Hero Title */}
-        <h1 className="text-center text-3xl sm:text-5xl font-bold mb-8 text-gray-900 dark:text-white">
+        <h1 className="text-center text-3xl sm:text-5xl font-bold mx-8 mb-8 text-gray-900 dark:text-white">
           Your Trusted Brand For Power Solutions
         </h1>
 
@@ -60,7 +60,7 @@ function HomeRoute() {
           <h2 className="text-2xl font-semibold mb-6 text-center text-gray-900 dark:text-white">Our Products</h2>
 
           <div className="relative w-full mx-auto overflow-hidden">
-            <CustomCarousel interval={3500} duration={1000} count={3}>
+            <CustomCarousel interval={3500} duration={1000} counts={{ desktop: 3, tablet: 2, mobile: 1 }}>
               {products.map((product) => (
                 <div className="flex flex-col items-center p-4">
                   {/* Rounded box with overflow-hidden */}
@@ -110,7 +110,7 @@ function HomeRoute() {
         </section>
 
         {/* Enquire Now */}
-        <section className="text-center">
+        <section className="mx-8 text-center">
           <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Enquire Now</h2>
           <p className="text-lg max-w-2xl mx-auto text-gray-900 dark:text-white">
             Get more info about our products and services by {' '}

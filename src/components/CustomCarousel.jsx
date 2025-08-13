@@ -49,12 +49,20 @@ function CustomRightArrow({ onClick }) {
   );
 }
 
-function CustomCarousel({ interval, duration, count, children }) {
+function CustomCarousel({ interval, duration, counts, children }) {
   const responsive = {
-    all: {
-      breakpoint: { max: 4000, min: 0 },
-      items: count,
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: counts.desktop,
     },
+    tablet: {
+      breakpoint: { max: 1024, min: 768 },
+      items: counts.tablet,
+    },
+    mobile: {
+      breakpoint: { max: 767, min: 0 },
+      items: counts.mobile,
+    }
   };
 
   return (
