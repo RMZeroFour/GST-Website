@@ -37,7 +37,7 @@ function HomeRoute() {
   return (
     <>
       {/* Main Carousel */}
-      <CustomCarousel >
+      <CustomCarousel interval={4000} duration={1000} count={1}>
         {carouselImages.map((src, index) => (
           <div key={index} className="w-full">
             <img
@@ -49,7 +49,7 @@ function HomeRoute() {
         ))}
       </CustomCarousel>
 
-      <div className='mx-4 my-16'>
+      <div className='my-16'>
         {/* Hero Title */}
         <h1 className="text-center text-3xl sm:text-5xl font-bold mb-8 text-gray-900 dark:text-white">
           Your Trusted Brand For Power Solutions
@@ -60,7 +60,7 @@ function HomeRoute() {
           <h2 className="text-2xl font-semibold mb-6 text-center text-gray-900 dark:text-white">Our Products</h2>
 
           <div className="relative w-full mx-auto overflow-hidden">
-            <CustomCarousel>
+            <CustomCarousel interval={3500} duration={1000} count={3}>
               {products.map((product) => (
                 <div className="flex flex-col items-center p-4">
                   {/* Rounded box with overflow-hidden */}
