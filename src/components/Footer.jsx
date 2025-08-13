@@ -12,13 +12,11 @@ function Footer() {
 
   const navProducts = [
     { to: '/products/ev-charger', label: 'EV Chargers' },
-    { to: '/products/ev-charger', label: 'EV Chargers' },
     { to: '/products/inverter', label: 'Inverters' },
-    { to: '/products/inverter', label: 'Inverters' },
-    { to: '/products/battery-charger', label: 'Battery Chargers' },
+    { to: '/products/home-ups', label: 'Home UPS' },
     { to: '/products/battery-charger', label: 'Battery Chargers' },
     { to: '/products/solar-charge-controller', label: 'Solar Charge Controllers' },
-    { to: '/products/solar-charge-controller', label: 'Solar Charge Controllers' },
+    { to: '/products/dc-dc-converter', label: 'DC-DC Converters' },
   ];
 
   return (
@@ -62,7 +60,7 @@ function Footer() {
               </ul>
             </div>
 
-            {/* Our Products - spans 2 columns with internal 2-column layout */}
+            {/* Our Products */}
             <div className="col-span-2">
               <h3 className="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">Our Products</h3>
               <div className="grid grid-cols-2 gap-x-4">
@@ -84,11 +82,18 @@ function Footer() {
         {/* Divider */}
         <hr className="my-6 border-gray-300 dark:border-gray-700" />
 
-        {/* Bottom Row */}
-        <div className="text-sm text-center md:text-left">
-          <span>
+        {/* Copyright and Back to Top */}
+        <div className="flex flex-col md:flex-row md:justify-between items-center text-sm text-center md:text-left">
+          <span className="mb-2 md:mb-0">
             © {new Date().getFullYear()} Gold Sterling Technologies™. All rights reserved.
           </span>
+
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="hover:text-blue-700 dark:hover:text-blue-500 mb-2 block"
+          >
+            🢁 Top
+          </button>
         </div>
       </div>
     </footer>

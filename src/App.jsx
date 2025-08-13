@@ -6,13 +6,15 @@ import { BASE_URL } from './utils/config.jsx';
 
 function App() {
   return (
-    <Router basename={BASE_URL}>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<HomeRoute />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <div className='bg-white dark:bg-gray-900'>
+      <Router basename={BASE_URL}>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<HomeRoute />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 

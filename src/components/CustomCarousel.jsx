@@ -1,11 +1,7 @@
 import { Carousel } from 'react-responsive-carousel';
-import carousel1 from '../assets/carousel/carousel_1.webp';
-import carousel2 from '../assets/carousel/carousel_2.webp';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-function HomeCarousel() {
-  const images = [carousel1, carousel2];
-
+function CustomCarousel({ children }) {
   return (
     <div className="relative w-full mx-auto overflow-hidden">
       <Carousel
@@ -64,18 +60,10 @@ function HomeCarousel() {
           )
         }
       >
-        {images.map((src, index) => (
-          <div key={index} className="w-full">
-            <img
-              src={src}
-              alt={`Slide ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
+        {children}
       </Carousel>
     </div>
   );
 };
 
-export default HomeCarousel;
+export default CustomCarousel;
