@@ -14,7 +14,6 @@ import productCharger15A from '../assets/products/product_charger15a.webp';
 import productScc20A from '../assets/products/product_scc20a.webp';
 import productDcDcConv from '../assets/products/product_dcdcconv.webp';
 
-function HomeRoute() {
   const carouselImages = [carousel1, carousel2];
 
   const products = [
@@ -34,6 +33,7 @@ function HomeRoute() {
     { name: 'LivGuard', logo: oemLivguard, link: 'https://www.livguard.com/' },
   ];
 
+function HomeRoute() {
   return (
     <>
       {/* Main Carousel */}

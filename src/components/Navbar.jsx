@@ -3,15 +3,15 @@ import { NavLink } from 'react-router';
 import logoLight from '../assets/logo/logo_light.svg';
 import logoDark from '../assets/logo/logo_dark.svg';
 
+const navLinks = [
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/products', label: 'Products' },
+  { to: '/contact', label: 'Contact' },
+];
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const navLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/about', label: 'About' },
-    { to: '/products', label: 'Products' },
-    { to: '/contact', label: 'Contact' },
-  ];
 
   return (
     <nav className='bg-white dark:bg-gray-900 w-full border-b border-gray-200 dark:border-gray-600'>
@@ -30,8 +30,8 @@ function Navbar() {
                 to={link.to}
                 end
                 className={({ isActive }) => `block py-2 px-3 rounded-sm transition-colors ${isActive
-                    ? 'text-blue-700 dark:text-blue-500'
-                    : 'text-gray-900 dark:text-white hover:text-blue-700 dark:hover:text-blue-500'}`}
+                  ? 'text-blue-700 dark:text-blue-500'
+                  : 'text-gray-900 dark:text-white hover:text-blue-700 dark:hover:text-blue-500'}`}
               >
                 {link.label}
               </NavLink>
@@ -67,8 +67,8 @@ function Navbar() {
                   end
                   onClick={() => setIsOpen(false)} // close menu after click
                   className={({ isActive }) => `block py-1 transition-colors ${isActive
-                      ? 'text-blue-700 dark:text-blue-500 font-semibold'
-                      : 'text-gray-900 dark:text-white hover:text-blue-700 dark:hover:text-blue-500'}`}
+                    ? 'text-blue-700 dark:text-blue-500 font-semibold'
+                    : 'text-gray-900 dark:text-white hover:text-blue-700 dark:hover:text-blue-500'}`}
                 >
                   {link.label}
                 </NavLink>

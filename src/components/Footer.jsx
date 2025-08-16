@@ -2,23 +2,23 @@ import { NavLink } from 'react-router';
 import logoLight from '../assets/logo/logo_light.svg';
 import logoDark from '../assets/logo/logo_dark.svg';
 
+const navLinks = [
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/products', label: 'Products' },
+  { to: '/contact', label: 'Contact' },
+];
+
+const navProducts = [
+  { to: '/products/ev-charger', label: 'EV Chargers' },
+  { to: '/products/inverter', label: 'Inverters' },
+  { to: '/products/home-ups', label: 'Home UPS' },
+  { to: '/products/battery-charger', label: 'Battery Chargers' },
+  { to: '/products/solar-charge-controller', label: 'Solar Charge Controllers' },
+  { to: '/products/dc-dc-converter', label: 'DC-DC Converters' },
+];
+
 function Footer() {
-  const navLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/about', label: 'About' },
-    { to: '/products', label: 'Products' },
-    { to: '/contact', label: 'Contact' },
-  ];
-
-  const navProducts = [
-    { to: '/products/ev-charger', label: 'EV Chargers' },
-    { to: '/products/inverter', label: 'Inverters' },
-    { to: '/products/home-ups', label: 'Home UPS' },
-    { to: '/products/battery-charger', label: 'Battery Chargers' },
-    { to: '/products/solar-charge-controller', label: 'Solar Charge Controllers' },
-    { to: '/products/dc-dc-converter', label: 'DC-DC Converters' },
-  ];
-
   return (
     <footer className="bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
       <div className="max-w-screen-xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
@@ -83,17 +83,30 @@ function Footer() {
         <hr className="my-6 border-gray-300 dark:border-gray-700" />
 
         {/* Copyright and Back to Top */}
-        <div className="flex flex-col md:flex-row md:justify-between items-center text-sm text-center md:text-left">
-          <span className="mb-2 md:mb-0">
+        <div className="flex flex-row justify-between items-center text-sm text-left">
+          <span className="m-2">
             © {new Date().getFullYear()} Gold Sterling Technologies™. All rights reserved.
           </span>
 
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="hover:text-blue-700 dark:hover:text-blue-500 mb-2 block"
+            className="hover:text-blue-700 dark:hover:text-blue-500 m-2 block"
+            aria-label="Scroll to top"
           >
-            🢁 Top
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              className="w-5 h-5 inline"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 3a1 1 0 01.707.293l6 6a1 1 0 11-1.414 1.414L11 6.414V17a1 1 0 11-2 0V6.414L4.707 10.707a1 1 0 01-1.414-1.414l6-6A1 1 0 0110 3z"
+                clipRule="evenodd"
+              />
+            </svg>
           </button>
+
         </div>
       </div>
     </footer>
