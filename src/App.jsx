@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import Navbar from './components/Navbar.jsx';
 import HomeRoute from './pages/HomeRoute.jsx';
 import ProductsRoute from './pages/ProductsRoute.jsx';
+import ContactRoute from './pages/ContactRoute.jsx';
 import Footer from './components/Footer.jsx';
 import { BASE_URL } from './utils/config.jsx';
 
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path='/' element={<HomeRoute />} />
             <Route path='/products' element={<ProductsRoute />} />
+            <Route path='/contact' element={<ContactRoute />} />
           </Routes>
         </main>
 
