@@ -10,12 +10,12 @@ const navLinks = [
 ];
 
 const navProducts = [
-  { to: '/products/ev-charger', label: 'EV Chargers' },
-  { to: '/products/inverter', label: 'Inverters' },
-  { to: '/products/home-ups', label: 'Home UPS' },
-  { to: '/products/battery-charger', label: 'Battery Chargers' },
-  { to: '/products/solar-charge-controller', label: 'Solar Charge Controllers' },
-  { to: '/products/dc-dc-converter', label: 'DC-DC Converters' },
+  { to: '/products?category=ev-charger', label: 'EV Chargers' },
+  { to: '/products?category=inverter', label: 'Inverters' },
+  { to: '/products?category=home-ups', label: 'Home UPS' },
+  { to: '/products?category=battery-charger', label: 'Battery Chargers' },
+  { to: '/products?category=solar-charge-controller', label: 'Solar Charge Controllers' },
+  { to: '/products?category=dc-dc-converter', label: 'DC-DC Converters' },
 ];
 
 function Footer() {
@@ -66,7 +66,7 @@ function Footer() {
               <div className="grid grid-cols-2 gap-x-4">
                 {navProducts.map((link, index) => (
                   <NavLink
-                    key={`${link.to}-${index}`}
+                    key={link.to}
                     to={link.to}
                     end
                     className="hover:text-blue-700 dark:hover:text-blue-500 mb-2 block"
@@ -90,7 +90,7 @@ function Footer() {
 
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="hover:text-blue-700 dark:hover:text-blue-500 m-2 block"
+            className="hover:text-blue-700 dark:hover:text-blue-500 m-2 block cursor-pointer"
             aria-label="Scroll to top"
           >
             <svg

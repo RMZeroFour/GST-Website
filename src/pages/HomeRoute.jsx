@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router';
 import CustomCarousel from '../components/CustomCarousel.jsx';
+import ProductCard from '../components/ProductCard.jsx';
 import carousel1 from '../assets/carousel/carousel_1.webp';
 import carousel2 from '../assets/carousel/carousel_2.webp';
 import oemLivserv from '../assets/oem/oem_livserv.webp';
@@ -14,24 +15,24 @@ import productCharger15A from '../assets/products/product_charger15a.webp';
 import productScc20A from '../assets/products/product_scc20a.webp';
 import productDcDcConv from '../assets/products/product_dcdcconv.webp';
 
-  const carouselImages = [carousel1, carousel2];
+const carouselImages = [carousel1, carousel2];
 
-  const products = [
-    { name: 'EV Chargers', logo: productEvCharger, link: '/products/ev-charger' },
-    { name: 'Inverters', logo: productInvSq350VA, link: '/products/inverter' },
-    { name: 'Home UPS', logo: productInvSq900VA, link: '/products/home-ups' },
-    { name: 'Battery Chargers', logo: productCharger15A, link: '/products/battery-charger' },
-    { name: 'Solar Charge Controllers', logo: productScc20A, link: '/products/solar-charge-controller' },
-    { name: 'DC-DC Converters', logo: productDcDcConv, link: '/products/dc-dc-converter' },
-  ];
+const categories = [
+  { name: 'EV Chargers', image: productEvCharger, link: '/products?category=ev-charger' },
+  { name: 'Inverters', image: productInvSq350VA, link: '/products?category=inverter' },
+  { name: 'Home UPS', image: productInvSq900VA, link: '/products?category=home-ups' },
+  { name: 'Battery Chargers', image: productCharger15A, link: '/products?category=battery-charger' },
+  { name: 'Solar Charge Controllers', image: productScc20A, link: '/products?category=solar-charge-controller' },
+  { name: 'DC-DC Converters', image: productDcDcConv, link: '/products?category=dc-dc-converter' },
+];
 
-  const oemPartners = [
-    { name: 'LivServ', logo: oemLivserv, link: '' },
-    { name: 'Apollo', logo: oemApollo, link: 'https://apollotw.com/home.html' },
-    { name: 'INA Solar', logo: oemInaSolar, link: 'https://insolationenergy.in/' },
-    { name: 'LivFast', logo: oemLivfast, link: 'https://www.livfast.in/' },
-    { name: 'LivGuard', logo: oemLivguard, link: 'https://www.livguard.com/' },
-  ];
+const oemPartners = [
+  { name: 'LivServ', image: oemLivserv, link: '' },
+  { name: 'Apollo', image: oemApollo, link: 'https://apollotw.com/home.html' },
+  { name: 'INA Solar', image: oemInaSolar, link: 'https://insolationenergy.in/' },
+  { name: 'LivFast', image: oemLivfast, link: 'https://www.livfast.in/' },
+  { name: 'LivGuard', image: oemLivguard, link: 'https://www.livguard.com/' },
+];
 
 function HomeRoute() {
   return (
@@ -61,27 +62,8 @@ function HomeRoute() {
 
           <div className="relative w-full mx-auto overflow-hidden">
             <CustomCarousel interval={3500} duration={1000} counts={{ desktop: 3, tablet: 2, mobile: 1 }}>
-              {products.map((product) => (
-                <div className="flex flex-col items-center p-4">
-                  {/* Rounded box with overflow-hidden */}
-                  <NavLink
-                    key={product.name}
-                    to={product.link}
-                    className="hover:scale-105 transition-transform duration-300 block"
-                  >
-                    <div className="h-64 w-64 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 relative shadow-md">
-                      <img
-                        src={product.logo}
-                        alt={product.name}
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
-                    </div>
-                  </NavLink>
-
-                  <div className="text-lg text-center text-gray-900 dark:text-white mt-4">
-                    {product.name}
-                  </div>
-                </div>
+              {categories.map((product) => (
+                <ProductCard key={product.name} title={product.name} image={product.image} link={product.link} />
               ))}
             </CustomCarousel>
 
@@ -100,7 +82,7 @@ function HomeRoute() {
                 className="hover:scale-110 transition-transform duration-300"
               >
                 <img
-                  src={partner.logo}
+                  src={partner.image}
                   alt={partner.name}
                   className="h-20 object-contain rounded-md"
                 />
