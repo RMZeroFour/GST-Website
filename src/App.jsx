@@ -3,6 +3,7 @@ import Navbar from './components/Navbar.jsx';
 import HomeRoute from './pages/HomeRoute.jsx';
 import ProductsRoute from './pages/ProductsRoute.jsx';
 import ContactRoute from './pages/ContactRoute.jsx';
+import AboutRoute from './pages/AboutRoute.jsx';
 import Footer from './components/Footer.jsx';
 import { BASE_URL } from './utils/config.jsx';
 
@@ -17,6 +18,7 @@ function App() {
             <Route path='/' element={<HomeRoute />} />
             <Route path='/products' element={<ProductsRoute />} />
             <Route path='/contact' element={<ContactRoute />} />
+            <Route path='/about' element={<AboutRoute />} />
           </Routes>
         </main>
 
